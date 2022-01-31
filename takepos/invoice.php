@@ -1300,12 +1300,8 @@ if (!empty($conf->use_javascript_ajax)) {
 }
 
 print '<!-- invoice.php place='.(int) $place.' invoice='.$invoice->ref.' mobilepage='.(empty($mobilepage) ? '' : $mobilepage).' $_SESSION["basiclayout"]='.(empty($_SESSION["basiclayout"])?'':$_SESSION["basiclayout"]).' conf->global->TAKEPOS_BAR_RESTAURANT='.getDolGlobalString('TAKEPOS_BAR_RESTAURANT').' -->'."\n";
-// Mahmoud Kamal add two button 
-// زارا لزيادة الكميه والاخر لتقليل الكميه
-print '<div class="div-table-responsive-no-min invoice"> 
-        <button type="button" class="calcbutton" style="background-color: red !important;" onclick="decr();"> - </button>
-        <button type="button" class="calcbutton" onclick="incre();"> + </button>
-        ';
+
+print '<div class="div-table-responsive-no-min invoice" style="height:100%"> ';
 print '<table id="tablelines" class="noborder noshadow postablelines" width="100%">';
 // Mahmoud kamal add two lines
 // الاول عشان رقم الفاتوره والتانى عشان نوعها
@@ -1319,7 +1315,14 @@ if ($sectionwithinvoicelink && ($mobilepage == "invoice" || $mobilepage == "")) 
 		print '<tr><td colspan="4">'.$sectionwithinvoicelink.'</td></tr>';
 	}
 }
-print '<tr class="liste_titre nodrag nodrop">';
+// Mahmoud Kamal add two button 
+// زارا لزيادة الكميه والاخر لتقليل الكميه
+print '<thead style="position:sticky ; top:0; z-index:999">
+<tr style="background: #E9E9E9;">
+<td colspan="5" style="border-bottom: none !important"><button type="button" class="calcbutton" style="background-color: red !important;" onclick="decr();"> - </button>
+<button type="button" class="calcbutton" onclick="incre();"> + </button></td>
+</tr>
+<tr class="liste_titre nodrag nodrop">';
 print '<td class="linecoldescription">';
 // In phone version only show when it is invoice page
 if (empty($mobilepage) || $mobilepage == "invoice") {
@@ -1387,7 +1390,8 @@ if (empty($_SESSION["basiclayout"]) || $_SESSION["basiclayout"] != 1) {
 } elseif ($mobilepage == "invoice") {
 	print '<td class="linecolqty right">'.$langs->trans('Qty').'</td>';
 }
-print "</tr>\n";
+print "</tr>\n </thead>";
+
 
 
 if (!empty($_SESSION["basiclayout"]) && $_SESSION["basiclayout"] == 1) {
