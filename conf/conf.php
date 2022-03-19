@@ -5,15 +5,15 @@
 // Take a look at conf.php.example file for an example of conf.php file
 // and explanations for all possibles parameters.
 //
-$dolibarr_main_url_root='http://localhost:8088/etolv/dolibarr/dolibarr-14.0.5/htdocs';
-$dolibarr_main_document_root='C:/xampp/htdocs/Etolv/dolibarr/dolibarr-14.0.5/htdocs';
+$dolibarr_main_url_root='http://localhost/dolibarr/htdocs';
+$dolibarr_main_document_root='C:/wamp64/www/dolibarr/htdocs';
 $dolibarr_main_url_root_alt='/custom';
-$dolibarr_main_document_root_alt='C:/xampp/htdocs/Etolv/dolibarr/dolibarr-14.0.5/htdocs/custom';
-$dolibarr_main_data_root='C:/xampp/htdocs/Etolv/dolibarr/dolibarr-14.0.5/documents';
+$dolibarr_main_document_root_alt='C:/wamp64/www/dolibarr/htdocs/custom';
+$dolibarr_main_data_root='C:/wamp64/www/dolibarr/documents';
 
 $dolibarr_main_db_host='localhost';
 $dolibarr_main_db_port='3306';
-$dolibarr_main_db_name='hanytest';
+$dolibarr_main_db_name='ora';
 $dolibarr_main_db_prefix='llx_';
 $dolibarr_main_db_user='root';
 $dolibarr_main_db_pass='';

@@ -272,8 +272,9 @@ function MoreCategories(moreorless) {
 // LoadProducts
 function LoadProducts(position, issubcat) {
 	console.log("LoadProducts");
+	
 	var maxproduct = <?php echo ($MAXPRODUCT - 2); ?>;
-
+	
 	if (position=="supplements") currentcat="supplements";
 	else
 	{
@@ -282,12 +283,14 @@ function LoadProducts(position, issubcat) {
 		if (issubcat==true) currentcat=$('#prodiv'+position).data('rowid');
 		else currentcat=$('#catdiv'+position).data('rowid');
 	}
+	
 	if (currentcat == undefined) return;
+
 	pageproducts=0;
 	ishow=0; //product to show counter
-
+	
 	jQuery.each(subcategories, function(i, val) {
-		if (currentcat==val.fk_parent) {
+		if (currentcat == val.fk_parent) {
 			$("#prodivdesc"+ishow).show();
 			$("#prodesc"+ishow).text(val.label);
 			$("#probutton"+ishow).text(val.label);
@@ -792,6 +795,7 @@ function CloseCashFence(rowid)
 
 function CashReport(rowid)
 {
+
 	$.colorbox({href:"../compta/cashcontrol/report.php?id="+rowid+"&contextpage=takepos", width:"60%", height:"90%", transition:"none", iframe:"true", title:"<?php echo $langs->trans("CashReport"); ?>"});
 }
 
