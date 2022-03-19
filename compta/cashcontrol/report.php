@@ -127,6 +127,7 @@ $sql .= " AND f.module_source = '".$db->escape($posmodule)."'";
 $sql .= " AND f.pos_source = '".$db->escape($terminalid)."'";
 $sql .= " AND f.paye = 1";
 $sql .= " AND p.entity = ".$conf->entity; // Never share entities for features related to accountancy
+
 /*if ($key == 'cash')       $sql.=" AND cp.code = 'LIQ'";
 elseif ($key == 'cheque') $sql.=" AND cp.code = 'CHQ'";
 elseif ($key == 'card')   $sql.=" AND cp.code = 'CB'";
@@ -144,6 +145,7 @@ if ($syear && !$smonth) {
 } else {
 	dol_print_error('', 'Year not defined');
 }
+
 
 $resql = $db->query($sql);
 if ($resql) {
